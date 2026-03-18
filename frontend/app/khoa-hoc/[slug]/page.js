@@ -113,34 +113,7 @@ export default function CourseDetail() {
             </div>
 
             {/* Sidebar */}
-            <div className="space-y-6">
-              {/* Course summary card */}
-              <div className="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm sticky top-24">
-                <button
-                  onClick={openRegistrationModal}
-                  className="w-full bg-red-600 hover:bg-red-700 text-white font-bold py-3.5 rounded-xl transition-colors text-sm mb-3"
-                >
-                  Đăng ký tư vấn miễn phí
-                </button>
-                <p className="text-center text-xs text-gray-400 mb-5">Học thử 1 buổi · Không mất phí</p>
-                <div className="space-y-2 text-sm">
-                  {[
-                    { icon: '📊', label: 'Trình độ', value: course.level },
-                    { icon: '⏱️', label: 'Thời gian', value: course.duration },
-                    { icon: '📚', label: 'Số buổi', value: course.sessions },
-                  ].map((item) => (
-                    <div key={item.label} className="flex items-center gap-2 py-2 border-b border-gray-100">
-                      <span>{item.icon}</span>
-                      <span className="text-gray-500">{item.label}:</span>
-                      <span className="text-gray-900 font-semibold ml-auto">{item.value}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              {/* Regular sidebar below */}
-              <Sidebar />
-            </div>
+            <Sidebar />
           </div>
         </div>
       </main>
