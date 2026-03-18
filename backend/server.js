@@ -24,6 +24,7 @@ app.use('/api/teachers', require('./routes/teachers'));
 app.use('/api/testimonials', require('./routes/testimonials'));
 app.use('/api/registrations', require('./routes/registrations'));
 app.use('/api/videos', require('./routes/videos'));
+app.use('/api/admin', require('./routes/admin'));
 
 app.get('/api/health', (req, res) => res.json({ status: 'ok' }));
 

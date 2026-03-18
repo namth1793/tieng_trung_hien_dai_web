@@ -97,13 +97,32 @@ function initDB() {
       status TEXT DEFAULT 'new',
       created_at TEXT DEFAULT (datetime('now'))
     );
+
+    CREATE TABLE IF NOT EXISTS admins (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      email TEXT UNIQUE NOT NULL,
+      password_hash TEXT NOT NULL,
+      name TEXT,
+      created_at TEXT DEFAULT (datetime('now'))
+    );
   `);
 
-  // Seed if empty
+  // Seed courses/articles/etc if empty
   const count = db.prepare('SELECT COUNT(*) as c FROM courses').get();
   if (count.c === 0) {
     seedDB(db);
     console.log('Database seeded successfully.');
+  }
+
+  // Seed default admin if not exists
+  const adminCount = db.prepare('SELECT COUNT(*) as c FROM admins').get();
+  if (adminCount.c === 0) {
+    const crypto = require('crypto');
+    const hash = crypto.createHash('sha256').update('admin123').digest('hex');
+    db.prepare('INSERT INTO admins (email, password_hash, name) VALUES (?, ?, ?)').run(
+      'admin@tiengtrunghiendai.vn', hash, 'Administrator'
+    );
+    console.log('Default admin created: admin@tiengtrunghiendai.vn / admin123');
   }
 }
 

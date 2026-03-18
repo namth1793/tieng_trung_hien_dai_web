@@ -130,9 +130,13 @@ export default function Footer() {
       <div className="border-t border-gray-800 py-5">
         <div className="container-custom flex flex-col md:flex-row items-center justify-between gap-3 text-sm text-gray-500">
           <p>© 2024 Trung Tâm Tiếng Trung Hiện Đại. All rights reserved.</p>
-          <div className="flex gap-4">
+          <div className="flex gap-4 items-center">
             <a href="#" className="hover:text-gray-300 transition-colors">Chính sách bảo mật</a>
             <a href="#" className="hover:text-gray-300 transition-colors">Điều khoản dịch vụ</a>
+            {/* Hidden admin login */}
+            <a href="/admin/login" className="text-gray-800 hover:text-gray-600 transition-colors text-xs select-none">
+              ·
+            </a>
           </div>
         </div>
       </div>
