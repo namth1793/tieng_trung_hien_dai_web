@@ -1,0 +1,14 @@
+# Railway / Nixpacks config
+# Ensures Python + build tools are available for compiling better-sqlite3
+
+[phases.setup]
+nixPkgs = ["nodejs_20", "python3", "gcc", "gnumake"]
+
+[phases.install]
+cmds = ["npm ci"]
+
+[phases.build]
+cmds = []
+
+[start]
+cmd = "node server.js"
