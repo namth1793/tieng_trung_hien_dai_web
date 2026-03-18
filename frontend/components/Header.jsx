@@ -1,6 +1,7 @@
 'use client';
 import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
+import { useRouter, usePathname } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
 import { openRegistrationModal } from './RegistrationModal';
 
@@ -8,9 +9,9 @@ import { openRegistrationModal } from './RegistrationModal';
 
 const topNavLinks = [
   { label: 'Trang chủ', href: '#trang-chu' },
-  { label: 'Album ảnh', href: '#hoat-dong' },
-  { label: 'Khuyến mãi', href: '#khoa-hoc' },
-  { label: 'Liên hệ', href: '#lien-he' },
+  { label: 'Album ảnh', href: '/album' },
+  { label: 'Khuyến mãi', href: '/khuyen-mai' },
+  { label: 'Liên hệ', href: '/lien-he' },
 ];
 
 const socialLinks = [
@@ -76,8 +77,8 @@ const navItems = [
       { label: 'Tiếng Trung Trẻ Em', href: '/khoa-hoc/tre-em' },
     ],
   },
-  { label: 'CẢM NHẬN HỌC VIÊN', href: '#cam-nhan' },
-  { label: 'HỌC BỔNG', href: '#hoc-bong' },
+  { label: 'CẢM NHẬN HỌC VIÊN', href: '/cam-nhan' },
+  { label: 'HỌC BỔNG', href: '/hoc-bong' },
   {
     label: 'TIN TỨC',
     href: '#tin-tuc',
@@ -143,6 +144,8 @@ function DropdownMenu({ items }) {
 function NavItem({ item, mobile, onClose }) {
   const [open, setOpen] = useState(false);
   const ref = useRef(null);
+  const router = useRouter();
+  const pathname = usePathname();
 
   // Close dropdown when clicking outside
   useEffect(() => {
@@ -152,11 +155,20 @@ function NavItem({ item, mobile, onClose }) {
     return () => document.removeEventListener('mousedown', handler);
   }, [open]);
 
-  const scrollTo = (href) => {
+  const navigate = (href) => {
+    if (onClose) onClose();
+    setOpen(false);
     if (href.startsWith('#')) {
-      const id = href.replace('#', '');
-      document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
-      if (onClose) onClose();
+      const id = href.slice(1);
+      if (pathname === '/') {
+        // On homepage — smooth scroll
+        document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+      } else {
+        // On subpage — navigate to homepage with hash
+        router.push('/' + href);
+      }
+    } else {
+      router.push(href);
     }
   };
 
@@ -165,7 +177,7 @@ function NavItem({ item, mobile, onClose }) {
       <div>
         <button
           onClick={() => {
-            if (item.dropdown) { setOpen(!open); } else { scrollTo(item.href); }
+            if (item.dropdown) { setOpen(!open); } else { navigate(item.href); }
           }}
           className="w-full flex items-center justify-between px-4 py-3 text-gray-800 font-semibold text-sm hover:bg-red-50 hover:text-red-600 rounded-lg transition-colors"
         >
@@ -179,14 +191,13 @@ function NavItem({ item, mobile, onClose }) {
         {item.dropdown && open && (
           <div className="ml-4 border-l-2 border-red-200 pl-3 mt-1 space-y-1">
             {item.dropdown.map((sub) => (
-              <Link
+              <button
                 key={sub.label}
-                href={sub.href}
-                onClick={onClose}
-                className="block py-2 px-2 text-sm text-gray-600 hover:text-red-600 transition-colors"
+                onClick={() => navigate(sub.href)}
+                className="block w-full text-left py-2 px-2 text-sm text-gray-600 hover:text-red-600 transition-colors"
               >
                 {sub.label}
-              </Link>
+              </button>
             ))}
           </div>
         )}
@@ -202,7 +213,7 @@ function NavItem({ item, mobile, onClose }) {
       onMouseLeave={() => item.dropdown && setOpen(false)}
     >
       <button
-        onClick={() => !item.dropdown && scrollTo(item.href)}
+        onClick={() => navigate(item.href)}
         className="flex items-center gap-1 px-3 py-3 text-white font-bold text-xs tracking-wide hover:bg-white/20 transition-colors duration-150 whitespace-nowrap h-full"
       >
         {item.label}
@@ -225,7 +236,9 @@ export default function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [searchFocused, setSearchFocused] = useState(false);
-  const [searchOpen, setSearchOpen] = useState(false); // mobile search
+  const [searchOpen, setSearchOpen] = useState(false);
+  const router = useRouter();
+  const pathname = usePathname();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
@@ -233,9 +246,18 @@ export default function Header() {
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
-  const scrollTo = (id) => {
-    document.getElementById(id.replace('#', ''))?.scrollIntoView({ behavior: 'smooth' });
+  const navigate = (href) => {
     setMobileOpen(false);
+    if (href.startsWith('#')) {
+      const id = href.slice(1);
+      if (pathname === '/') {
+        document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+      } else {
+        router.push('/' + href);
+      }
+    } else {
+      router.push(href);
+    }
   };
 
   return (
@@ -269,7 +291,7 @@ export default function Header() {
                 {topNavLinks.map((link, i) => (
                   <button
                     key={link.label}
-                    onClick={() => scrollTo(link.href)}
+                    onClick={() => navigate(link.href)}
                     className="text-white/90 hover:text-white text-xs px-3 py-1 hover:bg-white/15 transition-colors rounded font-medium"
                   >
                     {link.label}
@@ -305,7 +327,7 @@ export default function Header() {
 
             {/* Logo */}
             <button
-              onClick={() => scrollTo('#trang-chu')}
+              onClick={() => navigate('#trang-chu')}
               className="flex items-center gap-3 flex-shrink-0 group"
             >
               {/* Chinese seal icon */}

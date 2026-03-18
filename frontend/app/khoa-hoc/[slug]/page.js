@@ -100,8 +100,8 @@ export default function CourseDetail() {
               {/* Register CTA inline */}
               <div className="bg-red-50 border border-red-100 rounded-2xl p-6 flex flex-col sm:flex-row items-center gap-4">
                 <div className="flex-1">
-                  <p className="font-extrabold text-red-700 text-lg mb-1">Học phí: {course.fee}</p>
-                  <p className="text-gray-600 text-sm">Tư vấn miễn phí · Học thử 1 buổi không mất phí</p>
+                  <p className="font-extrabold text-red-700 text-lg mb-1">Đăng ký tư vấn miễn phí</p>
+                  <p className="text-gray-600 text-sm">Học thử 1 buổi không mất phí · Tư vấn lộ trình cá nhân hóa</p>
                 </div>
                 <button
                   onClick={openRegistrationModal}
@@ -116,14 +116,13 @@ export default function CourseDetail() {
             <div className="space-y-6">
               {/* Course summary card */}
               <div className="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm sticky top-24">
-                <div className="text-3xl font-extrabold text-red-600 mb-4">{course.fee}</div>
                 <button
                   onClick={openRegistrationModal}
                   className="w-full bg-red-600 hover:bg-red-700 text-white font-bold py-3.5 rounded-xl transition-colors text-sm mb-3"
                 >
-                  Đăng ký ngay
+                  Đăng ký tư vấn miễn phí
                 </button>
-                <p className="text-center text-xs text-gray-400 mb-5">Tư vấn miễn phí · Học thử 1 buổi</p>
+                <p className="text-center text-xs text-gray-400 mb-5">Học thử 1 buổi · Không mất phí</p>
                 <div className="space-y-2 text-sm">
                   {[
                     { icon: '📊', label: 'Trình độ', value: course.level },
