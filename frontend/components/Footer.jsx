@@ -134,8 +134,8 @@ export default function Footer() {
             <a href="#" className="hover:text-gray-300 transition-colors">Chính sách bảo mật</a>
             <a href="#" className="hover:text-gray-300 transition-colors">Điều khoản dịch vụ</a>
             {/* Hidden admin login */}
-            <a href="/admin/login" className="text-gray-800 hover:text-gray-600 transition-colors text-xs select-none">
-              ·
+            <a href="/admin/login" className="text-gray-600 hover:text-gray-300 transition-colors text-xs">
+              Admin
             </a>
           </div>
         </div>
