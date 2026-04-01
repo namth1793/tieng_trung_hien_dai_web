@@ -1,8 +1,8 @@
 'use client';
-import { useState, useEffect, useRef } from 'react';
+import { AnimatePresence, motion } from 'framer-motion';
 import Link from 'next/link';
-import { useRouter, usePathname } from 'next/navigation';
-import { motion, AnimatePresence } from 'framer-motion';
+import { usePathname, useRouter } from 'next/navigation';
+import { useEffect, useRef, useState } from 'react';
 import { openRegistrationModal } from './RegistrationModal';
 
 // ── Data ────────────────────────────────────────────────────────────────────
@@ -321,7 +321,7 @@ export default function Header() {
               onClick={() => navigate('#trang-chu')}
               className="flex items-center gap-3 flex-shrink-0 group"
             >
-              <img src="/logo.png" alt="Tiếng Trung Hiệp Lâm" className="h-14 w-auto object-contain" />
+              <img src="/logo.png" alt="Tiếng Trung Hiệp Lâm" className="h-18 w-auto object-contain" />
             </button>
 
             {/* Search bar — center, grows */}

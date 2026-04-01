@@ -3,7 +3,8 @@ const path = require('path');
 const fs = require('fs');
 const { seedDB } = require('./seed');
 
-const DB_PATH = path.join(__dirname, '../data/hieplam.db');
+const DATA_DIR = process.env.DATA_DIR || path.join(__dirname, '../data');
+const DB_PATH = path.join(DATA_DIR, 'hieplam.db');
 
 let db;
 
