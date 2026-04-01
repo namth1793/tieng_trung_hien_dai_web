@@ -1,6 +1,6 @@
 'use client';
-import { useState } from 'react';
 import { useRouter } from 'next/navigation';
+import { useState } from 'react';
 
 const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5006/api';
 
@@ -37,9 +37,6 @@ export default function AdminLogin() {
       <div className="bg-white rounded-2xl shadow-xl w-full max-w-md p-8">
         {/* Logo */}
         <div className="text-center mb-8">
-          <div className="w-16 h-16 bg-red-600 rounded-xl flex items-center justify-center mx-auto mb-4 shadow-lg">
-            <span className="text-white font-black text-3xl" style={{ fontFamily: 'serif' }}>中</span>
-          </div>
           <h1 className="text-2xl font-extrabold text-gray-900">Quản trị viên</h1>
           <p className="text-gray-500 text-sm mt-1">Tiếng Trung Hiện Đại</p>
         </div>

@@ -1,6 +1,5 @@
 import './globals.css';
-import FloatingContact from '../components/FloatingContact';
-import RegistrationModal from '../components/RegistrationModal';
+import PublicWidgets from '../components/PublicWidgets';
 
 export const metadata = {
   title: 'Trung Tâm Tiếng Trung Hiện Đại | Học Tiếng Trung Đà Nẵng',
@@ -18,8 +17,7 @@ export default function RootLayout({ children }) {
       </head>
       <body>
         {children}
-        <FloatingContact />
-        <RegistrationModal />
+        <PublicWidgets />
       </body>
     </html>
   );

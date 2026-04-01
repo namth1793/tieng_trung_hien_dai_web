@@ -54,7 +54,7 @@ export default function VideoLessons() {
               {/* Thumbnail */}
               <div className="relative aspect-video overflow-hidden bg-gray-200">
                 <Image
-                  src={video.thumbnail}
+                  src={`https://img.youtube.com/vi/${video.youtube_id}/hqdefault.jpg`}
                   alt={video.title}
                   fill
                   className="object-cover group-hover:scale-105 transition-transform duration-500"
