@@ -330,31 +330,7 @@ export default function Header() {
               onClick={() => navigate('#trang-chu')}
               className="flex items-center gap-3 flex-shrink-0 group"
             >
-              {/* Chinese seal icon */}
-              <div className="relative w-14 h-14 flex-shrink-0">
-                <div className="w-14 h-14 bg-red-600 rounded-lg flex items-center justify-center shadow-md group-hover:shadow-red-300 transition-shadow duration-300 border-2 border-red-700">
-                  {/* Seal inner design */}
-                  <div className="relative flex flex-col items-center justify-center">
-                    <span className="text-white font-bold text-2xl leading-none" style={{ fontFamily: 'serif', textShadow: '1px 1px 0 rgba(0,0,0,0.3)' }}>中</span>
-                    <div className="absolute -inset-1 border border-white/30 rounded" />
-                  </div>
-                </div>
-                {/* Decorative corner marks */}
-                <div className="absolute top-0.5 left-0.5 w-2 h-2 border-l-2 border-t-2 border-red-900/40 rounded-tl" />
-                <div className="absolute top-0.5 right-0.5 w-2 h-2 border-r-2 border-t-2 border-red-900/40 rounded-tr" />
-                <div className="absolute bottom-0.5 left-0.5 w-2 h-2 border-l-2 border-b-2 border-red-900/40 rounded-bl" />
-                <div className="absolute bottom-0.5 right-0.5 w-2 h-2 border-r-2 border-b-2 border-red-900/40 rounded-br" />
-              </div>
-
-              {/* Text */}
-              <div className="leading-tight hidden sm:block">
-                <div className="text-red-600 font-black text-xl tracking-tight leading-none" style={{ fontFamily: 'serif' }}>
-                  漢語中心
-                </div>
-                <div className="text-gray-800 font-extrabold text-sm tracking-widest uppercase mt-0.5">
-                  TIẾNG TRUNG HIỆN ĐẠI
-                </div>
-              </div>
+              <img src="/logo.png" alt="Tiếng Trung Hiệp Lâm" className="h-14 w-auto object-contain" />
             </button>
 
             {/* Search bar — center, grows */}
@@ -414,7 +390,7 @@ export default function Header() {
                 <svg className="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" />
                 </svg>
-                098 565 1306
+                0868 851 331
               </a>
 
               {/* Hamburger */}
@@ -531,7 +507,7 @@ export default function Header() {
                   href="tel:0985651306"
                   className="flex-1 bg-red-600 text-white text-xs font-bold py-2.5 rounded-full text-center hover:bg-red-700 transition-colors"
                 >
-                  📞 098 565 1306
+                  📞 0868 851 331
                 </a>
               </div>
 

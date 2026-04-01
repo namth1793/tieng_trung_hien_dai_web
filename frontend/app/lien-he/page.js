@@ -11,26 +11,19 @@ const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5006/api';
 
 const branches = [
   {
-    name: 'Cơ sở 1 — Trung tâm Đà Nẵng',
-    address: '123 Nguyễn Văn Linh, Q. Thanh Khê, Đà Nẵng',
-    phone: '098 565 1306',
+    name: 'Trung Tâm Tiếng Trung Hiệp Lâm',
+    address: '54 Đường Số 28, Phường Bình Phú, Q6 TPHCM',
+    phone: '0868 851 331',
     hours: 'T2–T7: 8:00–21:00 | CN: 8:00–17:00',
     map: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3834.1!2d108.1!3d16.06!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTbCsDAzJzM2LjAiTiAxMDjCsDA2JzAwLjAiRQ!5e0!3m2!1svi!2s!4v1',
-  },
-  {
-    name: 'Cơ sở 2 — Hải Châu',
-    address: '456 Lê Duẩn, Q. Hải Châu, Đà Nẵng',
-    phone: '098 565 1307',
-    hours: 'T2–T7: 8:00–21:00 | CN: Nghỉ',
-    map: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3834.1!2d108.21!3d16.07!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTbCsDA0JzEyLjAiTiAxMDjCsDEyJzM2LjAiRQ!5e0!3m2!1svi!2s!4v1',
   },
 ];
 
 const contactMethods = [
-  { icon: '📞', label: 'Hotline', value: '098 565 1306', href: 'tel:0985651306', color: 'bg-red-100 text-red-700' },
-  { icon: '💬', label: 'Zalo', value: '098 565 1306', href: 'https://zalo.me/0985651306', color: 'bg-blue-100 text-blue-700' },
-  { icon: '📘', label: 'Facebook', value: 'Tiếng Trung Hiện Đại', href: '#', color: 'bg-indigo-100 text-indigo-700' },
-  { icon: '📧', label: 'Email', value: 'info@tiengtrunghiendai.vn', href: 'mailto:info@tiengtrunghiendai.vn', color: 'bg-green-100 text-green-700' },
+  { icon: '📞', label: 'Hotline', value: '0868 851 331', href: 'tel:0868851331', color: 'bg-red-100 text-red-700' },
+  { icon: '💬', label: 'Zalo', value: '0868 851 331', href: 'https://zalo.me/0868851331', color: 'bg-blue-100 text-blue-700' },
+  { icon: '📘', label: 'Facebook', value: 'Tiếng Trung Hiệp Lâm', href: 'https://www.facebook.com/profile.php?id=61577436837901', color: 'bg-indigo-100 text-indigo-700' },
+  { icon: '📧', label: 'Email', value: 'quyhiep.lam@gmail.com', href: 'mailto:quyhiep.lam@gmail.com', color: 'bg-green-100 text-green-700' },
 ];
 
 export default function LienHePage() {

@@ -103,8 +103,8 @@ export default function Sidebar() {
       <div className="bg-red-600 rounded-xl p-6 text-center text-white">
         <div className="text-2xl mb-2">📞</div>
         <p className="font-bold text-sm mb-1">Tư vấn miễn phí</p>
-        <a href="tel:0985651306" className="block text-xl font-extrabold hover:text-yellow-300 transition-colors">
-          098 565 1306
+        <a href="tel:0868851331" className="block text-xl font-extrabold hover:text-yellow-300 transition-colors">
+          0868 851 331
         </a>
       </div>
     </aside>

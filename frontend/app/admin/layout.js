@@ -47,9 +47,7 @@ export default function AdminLayout({ children }) {
         {/* Logo */}
         <div className="p-5 border-b border-gray-700">
           <div className="flex items-center gap-3">
-            <div className="w-9 h-9 bg-red-600 rounded-lg flex items-center justify-center flex-shrink-0">
-              <span className="text-white font-black text-lg" style={{ fontFamily: 'serif' }}>中</span>
-            </div>
+            <img src="/logo.png" alt="Logo" className="h-9 w-auto object-contain flex-shrink-0" />
             <div>
               <div className="font-extrabold text-sm leading-tight">Tiếng Trung</div>
               <div className="text-gray-400 text-xs">Admin Panel</div>
