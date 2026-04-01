@@ -321,7 +321,7 @@ export default function Header() {
               onClick={() => navigate('#trang-chu')}
               className="flex items-center gap-3 flex-shrink-0 group"
             >
-              <img src="/logo.png" alt="Tiếng Trung Hiệp Lâm" className="h-18 w-auto object-contain" />
+              <img src="/logo.png" alt="Tiếng Trung Hiệp Lâm" className="h-20 w-auto object-contain" />
             </button>
 
             {/* Search bar — center, grows */}
