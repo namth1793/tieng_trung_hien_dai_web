@@ -11,7 +11,7 @@ function SideFloating() {
   const contacts = [
     {
       label: 'Zalo',
-      href: 'https://zalo.me/0985651306',
+      href: 'https://zalo.me/0868851331',
       color: 'bg-blue-500 hover:bg-blue-600',
       icon: (
         <svg className="w-5 h-5" viewBox="0 0 48 48" fill="white">
@@ -21,7 +21,7 @@ function SideFloating() {
     },
     {
       label: 'Messenger',
-      href: 'https://m.me/tiengtrungthayhung',
+      href: 'https://www.facebook.com/profile.php?id=61577436837901',
       color: 'bg-purple-500 hover:bg-purple-600',
       icon: (
         <svg className="w-5 h-5 fill-white" viewBox="0 0 24 24">
@@ -96,7 +96,7 @@ function BottomCTABar() {
     >
       {/* Phone button */}
       <motion.a
-        href="tel:0985651306"
+        href="tel:0868851331"
         whileHover={{ scale: 1.05, y: -2 }}
         whileTap={{ scale: 0.97 }}
         className="flex items-center gap-2.5 bg-orange-500 hover:bg-orange-600 text-white font-bold px-5 py-3 rounded-full shadow-xl shadow-orange-300/50 transition-colors duration-200 text-sm whitespace-nowrap"
